@@ -1,0 +1,22 @@
+singleuser:
+  defaultUrl: "/lab"
+  image:
+    name: jupyter/datascience-notebook
+    tag: python-3.7.6
+  storage:
+    capacity: 100Gi
+  cmd: start-singleuser.sh
+  uid: 0
+  memory:
+    limit: 30G
+    guarantee: 6G
+  extraEnv:
+    GRANT_SUDO: "yes"
+
+auth:
+  admin:
+    users:
+      - adminuser
+
+cull:
+  enabled: false
